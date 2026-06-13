@@ -118,7 +118,9 @@ async def home():
     Render использует этот эндпоинт для health-check.
     """
     return {"status": "bot is running", "webhook": f"{WEBHOOK_URL}/webhook"}
-
+@app.get("/ping")
+async def ping():
+    return {"ok": True}
 
 @app.post("/webhook")
 async def telegram_webhook(request: Request):
