@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: math-olympiad-bot
+    env: python
+    region: frankfurt          # ближайший к России регион
+    plan: free                 # бесплатный тариф
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn webhook:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: BOT_TOKEN
+        sync: false            # вводится вручную в dashboard Render
+      - key: WEBHOOK_URL
+        sync: false            # вводится вручную в dashboard Render
+      - key: ADMIN_ID
+        sync: false            # вводится вручную в dashboard Render
+      - key: DATABASE_URL
+        value: sqlite+aiosqlite:///problems.db

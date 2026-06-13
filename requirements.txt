@@ -1,0 +1,21 @@
+# Telegram бот
+aiogram>=3.7.0
+
+# Веб-сервер для webhook (Render)
+fastapi>=0.110.0
+uvicorn>=0.29.0
+
+# База данных
+SQLAlchemy>=2.0.30
+aiosqlite>=0.20.0
+
+# HTTP-клиент (парсеры)
+aiohttp>=3.9.5
+requests>=2.32.0
+
+# Парсинг HTML
+beautifulsoup4>=4.12.3
+
+# Окружение и валидация
+python-dotenv>=1.0.1
+pydantic>=2.7.1
